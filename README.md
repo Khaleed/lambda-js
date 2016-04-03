@@ -1,6 +1,6 @@
 ## Goal
 
-Create annoted code and examples of how to write a more Functional JavaScript in ES6.
+Create annotated code and examples of how to write a more Functional JavaScript in ES6.
 
 Where possible, the functional JS will be compared to OOP JS.
 
