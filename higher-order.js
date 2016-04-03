@@ -1,3 +1,5 @@
+"use strict";
+
 let animals = [{ name: "Tabby", species: "Cat"},
                {name:"Leo", species: "Cat"},
                {name:"Diesel", species: "Dog"},
@@ -8,7 +10,7 @@ let animals = [{ name: "Tabby", species: "Cat"},
 
  Task 1 - Filter Birds from Animals
 
-*/
+ */
 
 // filter bird - 1st style
 animals.filter(c => c.species === "Bird");
@@ -17,9 +19,9 @@ animals.filter(c => c.species === "Bird");
 let isBird = c => c.species === "Bird";
 animals.filter(isBird);
 
-// not functional - 3rd style
+// not functional
 let birds = [];
-for (var i = 0; i < animals.length; i += 1) {
+for (let i = 0; i < animals.length; i += 1) {
     if (animals[i].species === "Bird") {
         birds.push(animals[i]);
     }
@@ -32,12 +34,39 @@ for (var i = 0; i < animals.length; i += 1) {
 
  */
 
-// map - 1st Style
-console.log(animals.map(c => c.name));
+// map
+animals.map(c => c.name);
 
-// not functional - 2nd Style
+// non functional
 let names = [];
-for (var j = 0; j < animals.length; j += 1) {
+for (let j = 0; j < animals.length; j += 1) {
     names.push(animals[j].name);
 }
-console.log(names);
+
+/* REDUCE
+
+ Task 3 - Reduce to just one value
+
+ */
+
+let totalCost = [{value: 100},
+                 {value:200},
+                 {value: 300},
+                 {value:400},
+                 {value: 500}];
+
+// reduce
+console.log(totalCost.reduce((p, c) => {
+    return p + c.value;
+}, 0));
+
+
+// Non-Functional Alternative to Reduce
+let counter = 0;
+for (let k = 0; k < totalCost.length; k += 1) {
+    counter += totalCost[k].value;
+}
+
+// reduce a simple array to one value
+let arr = [100, 200, 300, 400, 500];
+(arr.reduce((p, c) => p + c));
