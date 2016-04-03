@@ -34,10 +34,10 @@ for (let i = 0; i < animals.length; i += 1) {
 
  */
 
-// map
+// Map
 animals.map(c => c.name);
 
-// non functional
+// Non functional
 let names = [];
 for (let j = 0; j < animals.length; j += 1) {
     names.push(animals[j].name);
@@ -55,11 +55,8 @@ let totalCost = [{value: 100},
                  {value:400},
                  {value: 500}];
 
-// reduce
-console.log(totalCost.reduce((p, c) => {
-    return p + c.value;
-}, 0));
-
+// Reduce
+totalCost.reduce((p, c) => p + c.value, 0);
 
 // Non-Functional Alternative to Reduce
 let counter = 0;
@@ -67,6 +64,8 @@ for (let k = 0; k < totalCost.length; k += 1) {
     counter += totalCost[k].value;
 }
 
-// reduce a simple array to one value
+// Reduce a simple array to one value
 let arr = [100, 200, 300, 400, 500];
 arr.reduce((p, c) => p + c);
+
+//
