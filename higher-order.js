@@ -69,4 +69,4 @@ for (let k = 0; k < totalCost.length; k += 1) {
 
 // reduce a simple array to one value
 let arr = [100, 200, 300, 400, 500];
-(arr.reduce((p, c) => p + c));
+arr.reduce((p, c) => p + c);
