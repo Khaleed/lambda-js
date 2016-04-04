@@ -1,7 +1,10 @@
 "use strict";
 
-import fs from 'fs';
+let fs = require('fs');
 
-fs.readFile("coffee.txt", "utf-8", (err, contents) => {
-    console.log(contents);
-});
+var result = fs.readFileSync("coffee.txt", "utf-8");
+result.trim()
+      .split("/n")
+      .map(c => c.split("\t"));
+
+console.log(result);

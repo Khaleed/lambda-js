@@ -1,6 +1,6 @@
 "use strict";
 
-let animals = [{ name: "Tabby", species: "Cat"},
+let pets = [{ name: "Tabby", species: "Cat"},
                {name:"Leo", species: "Cat"},
                {name:"Diesel", species: "Dog"},
                {name: "Duffy", species: "Bird"},
@@ -8,39 +8,39 @@ let animals = [{ name: "Tabby", species: "Cat"},
 
 /* FILTER
 
- Task 1 - Filter Birds from Animals
+ Task 1 - Filter Birds from Pets
 
  */
 
 // filter bird - 1st style
-animals.filter(c => c.species === "Bird");
+pets.filter(c => c.species === "Bird");
 
 // filter - 2nd style
 let isBird = c => c.species === "Bird";
-animals.filter(isBird);
+pets.filter(isBird);
 
 // not functional
 let birds = [];
-for (let i = 0; i < animals.length; i += 1) {
-    if (animals[i].species === "Bird") {
-        birds.push(animals[i]);
+for (let i = 0; i < pets.length; i += 1) {
+    if (pets[i].species === "Bird") {
+        birds.push(pets[i]);
     }
 }
 
 /* MAP
 
- Task 2 - Grab the name of animals
+ Task 2 - Grab the name of pets
  Use Map and show non-functional method too
 
  */
 
 // Map
-animals.map(c => c.name);
+pets.map(c => c.name);
 
 // Non functional
 let names = [];
-for (let j = 0; j < animals.length; j += 1) {
-    names.push(animals[j].name);
+for (let j = 0; j < pets.length; j += 1) {
+    names.push(pets[j].name);
 }
 
 /* REDUCE
