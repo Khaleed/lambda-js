@@ -55,7 +55,7 @@ let totalCost = [{value: 100},
                  {value:400},
                  {value: 500}];
 
-// Reduce
+// Reduce Example 1
 totalCost.reduce((p, c) => p + c.value, 0);
 
 // Non-Functional Alternative to Reduce
@@ -64,8 +64,6 @@ for (let k = 0; k < totalCost.length; k += 1) {
     counter += totalCost[k].value;
 }
 
-// Reduce a simple array to one value
+// Reduce Example 2
 let arr = [100, 200, 300, 400, 500];
 arr.reduce((p, c) => p + c);
-
-//
