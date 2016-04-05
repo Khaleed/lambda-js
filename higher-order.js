@@ -1,6 +1,6 @@
 "use strict";
 
-let pets = [{ name: "Tabby", species: "Cat"},
+const pets = [{ name: "Tabby", species: "Cat"},
                {name:"Leo", species: "Cat"},
                {name:"Diesel", species: "Dog"},
                {name: "Duffy", species: "Bird"},
@@ -16,7 +16,7 @@ let pets = [{ name: "Tabby", species: "Cat"},
 pets.filter(c => c.species === "Bird");
 
 // filter - 2nd style
-let isBird = c => c.species === "Bird";
+const isBird = c => c.species === "Bird";
 pets.filter(isBird);
 
 // not functional
@@ -44,9 +44,12 @@ for (let j = 0; j < pets.length; j += 1) {
 }
 
 // Map Chaining/Composition
-let list = [1, 2, 3, 4, 5];
-let transformedList = list.map(n => n * n)
-                          .map(n => n + n);
+const list = [1, 2, 3, 4, 5];
+const transformedList = list.map(n => n * n)
+                            .map(n => n + n);
+
+// Map and Filter Example
+
 
 /* REDUCE
 
@@ -54,7 +57,7 @@ let transformedList = list.map(n => n * n)
 
  */
 
-let totalCost = [{value: 100},
+const totalCost = [{value: 100},
                  {value:200},
                  {value: 300},
                  {value:400},
@@ -70,5 +73,5 @@ for (let k = 0; k < totalCost.length; k += 1) {
 }
 
 // Reduce Example 2 on Array
-let arr = [100, 200, 300, 400, 500];
+const arr = [100, 200, 300, 400, 500];
 arr.reduce((p, c) => p + c);
