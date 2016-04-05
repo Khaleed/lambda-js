@@ -8,7 +8,7 @@ let pets = [{ name: "Tabby", species: "Cat"},
 
 /* FILTER
 
- Task 1 - Filter Birds from Pets
+ Task - Filter Birds from Pets
 
  */
 
@@ -29,7 +29,7 @@ for (let i = 0; i < pets.length; i += 1) {
 
 /* MAP
 
- Task 2 - Grab the name of pets
+ Task - Grab the name of pets
  Use Map and show non-functional method too
 
  */
@@ -43,9 +43,14 @@ for (let j = 0; j < pets.length; j += 1) {
     names.push(pets[j].name);
 }
 
+// Map Chaining/Composition
+let list = [1, 2, 3, 4, 5];
+let transformedList = list.map(n => n * n)
+                          .map(n => n + n);
+
 /* REDUCE
 
- Task 3 - Reduce to just one value
+ Task - Reduce to just one value
 
  */
 
@@ -64,6 +69,6 @@ for (let k = 0; k < totalCost.length; k += 1) {
     counter += totalCost[k].value;
 }
 
-// Reduce Example 2
+// Reduce Example 2 on Array
 let arr = [100, 200, 300, 400, 500];
 arr.reduce((p, c) => p + c);
