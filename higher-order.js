@@ -70,6 +70,7 @@ const totalCost = [{value: 100},
 // Reduce Example 1
 totalCost.reduce((p, c) => p + c.value, 0);
 
+
 // Non-Functional Alternative to Reduce
 let counter = 0;
 for (let k = 0; k < totalCost.length; k += 1) {
@@ -79,3 +80,8 @@ for (let k = 0; k < totalCost.length; k += 1) {
 // Reduce Example 2 on Array
 const arr = [100, 200, 300, 400, 500];
 arr.reduce((p, c) => p + c);
+
+// Reduce Example 3 - double each number and then add the nos together to produce a single value
+const someNos = [5, 7, 8, 9 ,10];
+const result = someNos.map(n => n * n)
+                      .reduce((total, n) => total + n, 0);
