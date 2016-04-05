@@ -1,10 +1,10 @@
 "use strict";
 
 const pets = [{ name: "Tabby", species: "Cat"},
-               {name:"Leo", species: "Cat"},
-               {name:"Diesel", species: "Dog"},
-               {name: "Duffy", species: "Bird"},
-               {name: "Tweety", species: "Bird"}];
+              {name:"Leo", species: "Cat"},
+              {name:"Diesel", species: "Dog"},
+              {name: "Duffy", species: "Bird"},
+              {name: "Tweety", species: "Bird"}];
 
 /* FILTER
 
@@ -52,8 +52,8 @@ const transformedList = list.map(n => n * n)
 //  Double each number and return if it is only divisible by two
 
 const nos = [1, 2, 3, 4, 5];
-            nos.map(c => c * 2)
-            .filter(c => c % 2 === 0);
+nos.map(c => c * 2)
+   .filter(c => c % 2 === 0);
 
 /* REDUCE
 
@@ -62,10 +62,10 @@ const nos = [1, 2, 3, 4, 5];
  */
 
 const totalCost = [{value: 100},
-                 {value:200},
-                 {value: 300},
-                 {value:400},
-                 {value: 500}];
+                   {value:200},
+                   {value: 300},
+                   {value:400},
+                   {value: 500}];
 
 // Reduce Example 1
 totalCost.reduce((p, c) => p + c.value, 0);
@@ -85,3 +85,12 @@ arr.reduce((p, c) => p + c);
 const someNos = [5, 7, 8, 9 ,10];
 const result = someNos.map(n => n * n)
                       .reduce((total, n) => total + n, 0);
+
+// Reduce Example 4 -  reduce to an array that has nos divisible by 2
+const otherNos = [1, 2, 3, 4, 5];
+otherNos.reduce((evenArray, n) => {
+    if (n % 2 === 0) {
+        evenArray.push(n);
+    }
+    return evenArray;
+}, []);
