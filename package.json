@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Khaleed/lambdaJS/issues"
   },
-  "homepage": "https://github.com/Khaleed/lambdaJS#readme"
+  "homepage": "https://github.com/Khaleed/lambdaJS#readme",
+  "dependencies": {
+    "babel-eslint": "^6.0.2",
+    "eslint-config-airbnb": "^6.2.0"
+  }
 }
