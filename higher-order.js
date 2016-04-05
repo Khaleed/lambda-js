@@ -48,8 +48,12 @@ const list = [1, 2, 3, 4, 5];
 const transformedList = list.map(n => n * n)
                             .map(n => n + n);
 
-// Map and Filter Example
+//  Map and Filter Example -
+//  Double each number and return if it is only divisible by two
 
+const nos = [1, 2, 3, 4, 5];
+            nos.map(c => c * 2)
+            .filter(c => c % 2 === 0);
 
 /* REDUCE
 
