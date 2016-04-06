@@ -48,12 +48,15 @@ const list = [1, 2, 3, 4, 5];
 const transformedList = list.map(n => n * n)
                             .map(n => n + n);
 
-//  Map and Filter Example -
-//  Double each number and return if it is only divisible by two
-
+//  Map and Filter Example 1 - Double each number and return if it is only divisible by two
 const nos = [1, 2, 3, 4, 5];
 nos.map(c => c * 2)
    .filter(c => c % 2 === 0);
+
+//  Map and Filter Example 2 - Doube even nos and and throw away odd ones
+    // Non-functional way of doing this is as follows:-
+
+
 
 /* REDUCE
 
@@ -94,3 +97,5 @@ otherNos.reduce((evenArray, n) => {
     }
     return evenArray;
 }, []);
+
+//
