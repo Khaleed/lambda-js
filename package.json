@@ -16,8 +16,13 @@
     "url": "https://github.com/Khaleed/lambdaJS/issues"
   },
   "homepage": "https://github.com/Khaleed/lambdaJS#readme",
-  "dependencies": { 
+  "dependencies": {
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.3.0"
   }
 }
