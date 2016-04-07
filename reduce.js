@@ -13,6 +13,9 @@
 
 const fs = require('fs');
 
+const result = fs.readFileSync("coffee.txt", "utf-8");
+result.split("\n");
+
 fs.readFile("coffee.txt", "utf-8", (err, contents) => {
     console.log(contents.trim()
                 .split("\n")

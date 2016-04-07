@@ -53,17 +53,26 @@ const nos = [1, 2, 3, 4, 5];
 nos.map(c => c * 2)
    .filter(c => c % 2 === 0);
 
-//  Map and Filter Example 2 - Doube even nos and and throw away odd ones
-    // Non-functional way of doing this is as follows:-
+const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
+//  Filter and Map Example 2 - double only the even numbers
+let resultNos = nosList.filter(c => c % 2 === 0)
+                       .map(c => c * 2);
 
-
+// Non-functional way of doing this is as follows:-
+let newNosList = [];
+for (var l = 0; l < nosList.length; l += 1) {
+    // if it is an even number
+    if (nosList[l] % 2 === 0) {
+        // double that number and get rid of odd nos
+        newNosList[l] = nosList[l] * 2;
+    }
+}
 
 /* REDUCE
 
  Task - Reduce to just one value
 
  */
-
 const totalCost = [{value: 100},
                    {value:200},
                    {value: 300},
