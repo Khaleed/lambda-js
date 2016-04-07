@@ -1,6 +1,0 @@
-Mohamed Peruvian Coffee 100 5
-Ali     Brazilian Coffee    200    10
-Abdul   Kenyan Coffee   300 3
-Ralph   Ethiopian Coffee    400 5
-Andy    Costa-Rican         Coffee  600 10
-Diego   Mexican Coffee      300     6
