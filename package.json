@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Khaleed/lambdaJS#readme",
   "dependencies": {
+    "eslint-config-airbnb": "^6.2.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },

@@ -1,5 +1,4 @@
 {
-  "extends": "airbnb",
    "env": {
     "browser": true,
     "es6": true,
@@ -19,12 +18,12 @@
   },
    "rules": {
     "consistent-return": [0],
+    "indent": "error",
     "key-spacing": [0],
     "quotes": [0],
     "new-cap": [0],
     "no-multi-spaces": [0],
     "no-shadow": [0],
     "no-unused-vars": [1],
-    "no-use-before-define": [2, "nofunc"]
   }
 }
