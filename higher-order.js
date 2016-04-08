@@ -1,5 +1,10 @@
 "use strict";
 
+/*
+ HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
+
+ */
+
 const pets = [{ name: "Tabby", species: "Cat"},
               {name:"Leo", species: "Cat"},
               {name:"Diesel", species: "Dog"},
