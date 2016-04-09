@@ -1,5 +1,4 @@
-/* Currying refers to when a f
- unction with multiple arguments is transformed into
+/* Currying refers to when a function with multiple arguments is transformed into
  a series of functions with single arguments
  */
 
