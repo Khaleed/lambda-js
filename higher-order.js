@@ -1,9 +1,10 @@
 "use strict";
 
 /*
+
  HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
 
- */
+*/
 
 const pets = [{ name: "Tabby", species: "Cat"},
               {name:"Leo", species: "Cat"},
@@ -15,10 +16,12 @@ const pets = [{ name: "Tabby", species: "Cat"},
 
  Task - Filter Birds from Pets
 
- */
+*/
 
 // filter bird - 1st style
 pets.filter(c => c.species === "Bird");
+// filter cat - 1st style
+pets.filter(c => c.species === "Cat");
 
 // filter - 2nd style
 const isBird = c => c.species === "Bird";
@@ -39,27 +42,27 @@ for (let i = 0; i < pets.length; i += 1) {
 
  */
 
-// Map
+// Map - get name of pets
 pets.map(c => c.name);
 
 // Non functional
-let names = [];
-for (let j = 0; j < pets.length; j += 1) {
-    names.push(pets[j].name);
+let petNames = [];
+for (var j = 0; j < pets.length; j += 1) {
+    petNames.push(pets[j].name);
 }
 
 // Map Chaining/Composition
 const list = [1, 2, 3, 4, 5];
-const transformedList = list.map(n => n * n)
-                            .map(n => n + n);
+list.map(n => n * n)
+    .map(n => n + n);
 
-//  Map and Filter Example 1 - Double each number and return if it is only divisible by two
+// Map and Filter Example 1 - Double each number and return if it is only divisible by two
 const nos = [1, 2, 3, 4, 5];
 nos.map(c => c * 2)
    .filter(c => c % 2 === 0);
 
 const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
-//  Filter and Map Example 2 - double only the even numbers
+// Filter and Map Example 2 - double only the even numbers
 let resultNos = nosList.filter(c => c % 2 === 0)
                        .map(c => c * 2);
 
