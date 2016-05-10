@@ -28,9 +28,9 @@ const isBird = c => c.species === "Bird";
 pets.filter(isBird);
 
 // filter - 3rd style
-console.log(Array.prototype.filter.call(pets, c => c.species === "Bird"));
+Array.prototype.filter.call(pets, c => c.species === "Bird");
 
-// we ignore the 3rd stlye because it is ugly,
+// we ignore the 3rd stlye because it is somewhat ugly,
 // there are functional APIs like lodash and ramda that take care of these things for you
 
 // not functional
@@ -44,7 +44,7 @@ for (let i = 0; i < pets.length; i += 1) {
 /* MAP
 
  Task - Grab the name of pets
- Use Map and show non-functional method too
+ Use Map and show the non-functional method too
 
  */
 
@@ -94,7 +94,6 @@ const totalCost = [{value: 100},
 
 // Reduce Example 1
 totalCost.reduce((p, c) => p + c.value, 0);
-
 
 // Non-Functional Alternative to Reduce
 let counter = 0;
