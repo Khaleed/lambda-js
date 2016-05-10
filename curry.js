@@ -1,6 +1,6 @@
 /* Currying refers to when a function with multiple arguments is transformed into
  a series of functions with single arguments
- */
+*/
 
 // Say we have a function that takes multiple arguments
 const getLionKingInfo = (name, size, prey) => "Name is " + name + ", size is " + size + " and prey is " + prey;

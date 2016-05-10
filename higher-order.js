@@ -6,7 +6,7 @@
 
 */
 
-const pets = [{ name: "Tabby", species: "Cat"},
+const pets = [{name: "Tabby", species: "Cat"},
               {name:"Leo", species: "Cat"},
               {name:"Diesel", species: "Dog"},
               {name: "Duffy", species: "Bird"},
@@ -26,6 +26,12 @@ pets.filter(c => c.species === "Cat");
 // filter - 2nd style
 const isBird = c => c.species === "Bird";
 pets.filter(isBird);
+
+// filter - 3rd style
+console.log(Array.prototype.filter.call(pets, c => c.species === "Bird"));
+
+// we ignore the 3rd stlye because it is ugly,
+// there are functional APIs like lodash and ramda that take care of these things for you
 
 // not functional
 let birds = [];
@@ -63,9 +69,8 @@ nos.map(c => c * 2)
 
 const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
 // Filter and Map Example 2 - double only the even numbers
-let resultNos = nosList.filter(c => c % 2 === 0)
-                       .map(c => c * 2);
-
+nosList.filter(c => c % 2 === 0)
+       .map(c => c * 2);
 // Non-functional way of doing this is as follows:-
 let newNosList = [];
 for (var l = 0; l < nosList.length; l += 1) {
@@ -103,8 +108,8 @@ arr.reduce((p, c) => p + c);
 
 // Reduce Example 3 - double each number and then add the nos together to produce a single value
 const someNos = [5, 7, 8, 9 ,10];
-const result = someNos.map(n => n * n)
-                      .reduce((total, n) => total + n, 0);
+someNos.map(n => n * n)
+       .reduce((total, n) => total + n, 0);
 
 // Reduce Example 4 -  reduce to an array that has nos divisible by 2
 const otherNos = [1, 2, 3, 4, 5];
@@ -115,4 +120,3 @@ otherNos.reduce((evenArray, n) => {
     return evenArray;
 }, []);
 
-//
