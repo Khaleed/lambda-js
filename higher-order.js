@@ -31,9 +31,9 @@ pets.filter(isBird);
 Array.prototype.filter.call(pets, c => c.species === "Bird");
 
 // we ignore the 3rd stlye because it is somewhat ugly,
-// there are functional APIs like lodash and ramda that take care of these things for you
+// there are functional APIs like lodash and ramda
 
-// not functional
+// imperative style
 let birds = [];
 for (let i = 0; i < pets.length; i += 1) {
     if (pets[i].species === "Bird") {
