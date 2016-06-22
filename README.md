@@ -6,7 +6,7 @@ Where possible, examples will be compared to non-functional programming code.
 
 ## Instructions
 
-To run the code, run node on any of the source files
+To run the code, run node on any of the source files that are under the `src` directory
 
 `node curry.js`
 
