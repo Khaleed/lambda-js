@@ -20,6 +20,7 @@ const pets = [{name: "Tabby", species: "Cat"},
 
 // filter bird - 1st style
 pets.filter(c => c.species === "Bird");
+
 // filter cat - 1st style
 pets.filter(c => c.species === "Cat");
 
@@ -53,7 +54,7 @@ pets.map(c => c.name);
 
 // Non functional
 let petNames = [];
-for (var j = 0; j < pets.length; j += 1) {
+for (let j = 0; j < pets.length; j += 1) {
     petNames.push(pets[j].name);
 }
 
@@ -62,22 +63,23 @@ const list = [1, 2, 3, 4, 5];
 list.map(n => n * n)
     .map(n => n + n);
 
-// Map and Filter Example 1 - Double each number and return if it is only divisible by two
+// Map and Filter Example 1 - Double each number if it is only divisible by two
 const nos = [1, 2, 3, 4, 5];
 nos.map(c => c * 2)
    .filter(c => c % 2 === 0);
 
-const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
 // Filter and Map Example 2 - double only the even numbers
+const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
 nosList.filter(c => c % 2 === 0)
        .map(c => c * 2);
-// Non-functional way of doing this is as follows:-
-let newNosList = [];
-for (var l = 0; l < nosList.length; l += 1) {
+
+// Non-functional way of doing the above is as follows:-
+const newNosList = [];
+for (let i = 0; i < nosList.length; i += 1) {
     // if it is an even number
-    if (nosList[l] % 2 === 0) {
+    if (nosList[i] % 2 === 0) {
         // double that number and get rid of odd nos
-        newNosList[l] = nosList[l] * 2;
+        newNosList.push(nosList[i] * 2);
     }
 }
 
@@ -94,8 +96,6 @@ const totalCost = [{value: 100},
 
 // Reduce Example 1
 totalCost.reduce((p, c) => p + c.value, 0);
-
-// Non-Functional Alternative to Reduce
 let counter = 0;
 for (let k = 0; k < totalCost.length; k += 1) {
     counter += totalCost[k].value;
