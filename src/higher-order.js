@@ -135,11 +135,26 @@ const even = otherNos.reduce( (arrayWithEvenNos, n) => {
     }
     return arrayWithEvenNos;
 },[]);
-console.log(even);
+// console.log(even);
+
+// imperative style
+let arrayWithEvenNos = [];
+for (let i = 0; i < otherNos.length; i += 1) {
+    if (otherNos[i] % 2 === 0) {
+        arrayWithEvenNos.push(otherNos[i]);
+    }
+}
+// console.log(arrayWithEvenNos);
 
 // Reduce Example 5 - flatten a multi-dimensional array
-const flattened = [[1, 2, 3], [4, 5, 6], [7,8,9], [10, 11, 12], [13, 14, 15]];
-const result = flattened.reduce((p, c) => {
-    p.concat(c);
-});
-console.log(result);
+const flattened = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
+const singleArr = flattened.reduce((singleArray, arr) => {
+    return singleArray.concat(arr);
+}, []);
+
+// imperative example
+let finalArr = [];
+for (let i = 0; i < flattened.length; i += 1) {
+    finalArr = finalArr.concat(flattened[i]);
+}
+console.log(finalArr);
