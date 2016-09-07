@@ -113,7 +113,7 @@ let sum = 0;
 for (let i = 0; i < arr.length; i += 1) {
     sum += arr[i];
 }
-console.log(sum);
+// console.log(sum);
 
 // Reduce Example 3 - double each number and then add the nos together to produce a single value
 const someNos = [5, 7, 8, 9 ,10];
@@ -125,7 +125,7 @@ let total = 0;
 for (let i = 0; i < someNos.length; i += 1) {
     total += someNos[i] * 2;
 }
-console.log(total);
+// console.log(total);
 
 // Reduce Example 4 -  reduce to an array that has nos divisible by 2
 const otherNos = [10, 11, 12, 13, 14, 15, 16, 18, 20];
