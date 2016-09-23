@@ -12,6 +12,6 @@ To run the code, run node on any of the source files that are under the `src` di
 
 ## Credits
 
-Thanks to Sal Becker who was the first person to teach me about Map, Reduce, Filter at RC. Special thanks Professor Ragde of the University of Waterloo for sharing his insights into Functional Programming during his residency at RC. 
+Thanks to Sal Becker who was the first person to teach me about Map, Reduce, and Filter at RC. Special thanks to Professor Ragde of the University of Waterloo for sharing his insights into Functional Programming during his residency at RC. 
 
 <a href='http://www.recurse.com' title='Made with love at the Recurse Center'><img src='https://cloud.githubusercontent.com/assets/2883345/11325206/336ea5f4-9150-11e5-9e90-d86ad31993d8.png' height='20px'/></a>
