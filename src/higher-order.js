@@ -14,22 +14,23 @@ const pets = [{name: "Tabby", species: "Cat"},
 
 /* FILTER
 
- Task - Filter Birds from Pets
+ Task - Filter Birds and Cats from Pets
 
- */
+*/
 
 // filter bird - 1st style
-pets.filter(c => c.species === "Bird");
-
+const getBirds = pets.filter(pet => pet.species === "Bird");
+console.log(getBirds);
 // filter cat - 1st style
-pets.filter(c => c.species === "Cat");
+const getCats = pets.filter(pet => pet.species === "Cat");
+// console.log(getCats);
 
 // filter - 2nd style
-const isBird = c => c.species === "Bird";
+const isBird = pet => pet.species === "Bird";
 pets.filter(isBird);
 
 // filter - 3rd style
-Array.prototype.filter.call(pets, c => c.species === "Bird");
+Array.prototype.filter.call(pets, pet => pet.species === "Bird");
 
 // we ignore the 3rd stlye because it is somewhat ugly,
 // there are functional APIs like lodash and ramda
@@ -50,38 +51,43 @@ for (let i = 0; i < pets.length; i += 1) {
  */
 
 // Map - get name of pets
-pets.map(c => c.name);
+const getPetNames = pets.map(pet => pet.name);
+// console.log(getPetNames);
 
 // Non functional
 let petNames = [];
-for (let j = 0; j < pets.length; j += 1) {
-    petNames.push(pets[j].name);
+for (let i = 0; i < pets.length; i += 1) {
+    petNames.push(pets[i].name);
 }
 
 // Map Chaining/Composition
 const list = [1, 2, 3, 4, 5];
-list.map(n => n * n)
-    .map(n => n + n);
+const newList = list.map(n => n * n)
+                    .map(n => n + n);
+// console.log(newList);
 
 // Map and Filter Example 1 - Double each number if it is only divisible by two
 const nos = [1, 2, 3, 4, 5];
-nos.map(c => c * 2)
-    .filter(c => c % 2 === 0);
+const newNos = nos.map(n => n * 2)
+                  .filter(n => n % 2 === 0);
+// console.log(newNos);
 
 // Filter and Map Example 2 - double only the even numbers
 const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
-nosList.filter(c => c % 2 === 0)
-    .map(c => c * 2);
+const newNumList = nosList.filter(n => n % 2 === 0)
+                          .map(n => n * 2);
+// console.log(newNumList);
 
 // Non-functional way of doing the above is as follows:-
-const newNosList = [];
+const newList2 = [];
 for (let i = 0; i < nosList.length; i += 1) {
     // if it is an even number
     if (nosList[i] % 2 === 0) {
-        // double that number and get rid of odd nos
-        newNosList.push(nosList[i] * 2);
+        // double that number and push it to new list
+        newList2.push(nosList[i] * 2);
     }
 }
+// console.log(newList2);
 
 /* REDUCE
 
@@ -96,17 +102,20 @@ const totalCost = [{value: 100},
                    {value: 500}];
 
 // Reduce Example 1
-totalCost.reduce((total, cost) => total + cost.value, 0);
+const getTotalCost = totalCost.reduce((total, cost) => total + cost.value, 0);
+// console.log(getTotalCost);
 
 // Imperative alternative to Example 1
 let counter = 0;
 for (let i = 0; i < totalCost.length; i += 1) {
     counter += totalCost[i].value;
 }
+// console.log(counter);
 
 // Reduce Example 2 on Array
 const arr = [100, 200, 300, 400, 500];
-arr.reduce((p, c) => p + c);
+const newArr = arr.reduce((p, c) => p + c);
+// console.log(newArr);
 
 // Imperative version of Example 2
 let sum = 0;
@@ -117,8 +126,9 @@ for (let i = 0; i < arr.length; i += 1) {
 
 // Reduce Example 3 - double each number and then add the nos together to produce a single value
 const someNos = [5, 7, 8, 9 ,10];
-someNos.map(n => n * 2)
-       .reduce((totalNo, n) => totalNo + n, 0);
+const newSomeNos = someNos.map(n => n * 2)
+                          .reduce((totalNo, n) => totalNo + n, 0);
+// console.log(newSomeNos);
 
 // Imperative version of Example 3
 let total = 0;
@@ -151,10 +161,11 @@ const flattened = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
 const singleArr = flattened.reduce((singleArray, arr) => {
     return singleArray.concat(arr);
 }, []);
+// console.log(singleArr);
 
 // imperative example
 let finalArr = [];
 for (let i = 0; i < flattened.length; i += 1) {
     finalArr = finalArr.concat(flattened[i]);
 }
-console.log(finalArr);
+// console.log(finalArr);
