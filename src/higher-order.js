@@ -18,9 +18,10 @@ const pets = [{name: "Tabby", species: "Cat"},
 
 */
 
-// filter bird - 1st style
+// filter bird- 1st style
 const getBirds = pets.filter(pet => pet.species === "Bird");
-console.log(getBirds);
+// console.log(getBirds);
+
 // filter cat - 1st style
 const getCats = pets.filter(pet => pet.species === "Cat");
 // console.log(getCats);
@@ -42,13 +43,14 @@ for (let i = 0; i < pets.length; i += 1) {
         birds.push(pets[i]);
     }
 }
+// console.log(birds);
 
 /* MAP
 
  Task - Grab the name of pets
- Use Map and show the non-functional method too
+ Use Map and show the non-functional style too
 
- */
+*/
 
 // Map - get name of pets
 const getPetNames = pets.map(pet => pet.name);
@@ -59,6 +61,7 @@ let petNames = [];
 for (let i = 0; i < pets.length; i += 1) {
     petNames.push(pets[i].name);
 }
+// console.log(petNames);
 
 // Map Chaining/Composition
 const list = [1, 2, 3, 4, 5];
@@ -66,7 +69,7 @@ const newList = list.map(n => n * n)
                     .map(n => n + n);
 // console.log(newList);
 
-// Map and Filter Example 1 - Double each number if it is only divisible by two
+// Map and Filter Example 1 - Double each number and filter nos that are divisible by two
 const nos = [1, 2, 3, 4, 5];
 const newNos = nos.map(n => n * 2)
                   .filter(n => n % 2 === 0);
