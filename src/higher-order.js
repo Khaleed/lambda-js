@@ -161,14 +161,14 @@ for (let i = 0; i < otherNos.length; i += 1) {
 // console.log(arrayWithEvenNos);
 
 // Reduce Example 5 - flatten a multi-dimensional array
-const flattened = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
-const singleArr = flattened.reduce((singleArray, arr) => singleArray.concat(arr), []);
+const nestedArr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
+const singleArr = nestedArr.reduce((singleArray, arr) => singleArray.concat(arr), []);
 //console.log(singleArr);
 
 // imperative example
 let finalArr = [];
-for (let i = 0; i < flattened.length; i += 1) {
-    finalArr = finalArr.concat(flattened[i]);
+for (let i = 0; i < nestedArr.length; i += 1) {
+    finalArr = finalArr.concat(nestedArr[i]);
 }
 // console.log(finalArr);
 
