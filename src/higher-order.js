@@ -171,3 +171,23 @@ for (let i = 0; i < flattened.length; i += 1) {
     finalArr = finalArr.concat(flattened[i]);
 }
 // console.log(finalArr);
+
+/* Reduce Example 6 - The value of reduce as a swiss army knife
+ **/
+const sumAnyNums = (...args) => args.reduce((sum, arg) => sum + arg, 0);
+// console.log(sumAnyNums(1,2,3,4,5));
+
+// imperative style
+let totalSum = 0;
+const sumNums = (...args) => {
+    if (args.length === 0) {
+        throw("error");
+    } else {
+        for (let i = 0; i < args.length; i += 1) {
+            totalSum += args[i];
+        }
+    }
+    return totalSum;
+};
+sumNums(1, 2);
+// console.log(totalSum);
