@@ -140,7 +140,8 @@ for (let i = 0; i < someNos.length; i += 1) {
 }
 // console.log(total);
 
-// Reduce Example 4 -  reduce to an array that has nos divisible by 2
+/* Reduce Example 4 -  reduce to an array that has nos divisible by 2
+**/
 const otherNos = [10, 11, 12, 13, 14, 15, 16, 18, 20];
 const even = otherNos.reduce( (arrayWithEvenNos, n) => {
     if (n % 2 === 0) {
@@ -161,10 +162,8 @@ for (let i = 0; i < otherNos.length; i += 1) {
 
 // Reduce Example 5 - flatten a multi-dimensional array
 const flattened = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
-const singleArr = flattened.reduce((singleArray, arr) => {
-    return singleArray.concat(arr);
-}, []);
-// console.log(singleArr);
+const singleArr = flattened.reduce((singleArray, arr) => singleArray.concat(arr), []);
+//console.log(singleArr);
 
 // imperative example
 let finalArr = [];
