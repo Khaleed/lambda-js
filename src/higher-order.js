@@ -192,7 +192,7 @@ const sumNums = (...args) => {
 sumNums(1, 2);
 // console.log(totalSum);
 
-/* Reduce Example 7 - Map written as a reduce
+/* Reduce Example 7 - Map written as a Reduce
  *
  **/
 
@@ -204,5 +204,19 @@ const newArray = anotherNumList.reduce((newArray, num) => {
     newArray.push(num * 2);
     return newArray;
 },[]);
+// console.log(newArray);
 
-console.log(newArray);
+/* Reduce Example 8 - Filter written as Reduce
+ *
+ **/
+const yetAnotherList = [20, 21, 22, 23, 24, 25, 26, 27];
+const findOddNums = yetAnotherList.filter((num) => num % 2 !== 0);
+// console.log(findOddNums);
+
+const reduceToOddNums = yetAnotherList.reduce((newArr, num) => {
+    if (num % 2 !== 0) {
+        newArr.push(num);
+    }
+    return newArr;
+}, []);
+console.log(reduceToOddNums);
