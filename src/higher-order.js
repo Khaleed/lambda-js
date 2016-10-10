@@ -191,3 +191,18 @@ const sumNums = (...args) => {
 };
 sumNums(1, 2);
 // console.log(totalSum);
+
+/* Reduce Example 7 - Map written as a reduce
+ *
+ **/
+
+const anotherNumList = [11, 12, 13, 14, 15];
+const doubleList = anotherNumList.map(n => n * 2);
+// ;=> [22, 24, 26, 28, 30]
+
+const newArray = anotherNumList.reduce((newArray, num) => {
+    newArray.push(num * 2);
+    return newArray;
+},[]);
+
+console.log(newArray);
