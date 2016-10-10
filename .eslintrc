@@ -24,6 +24,5 @@
     "new-cap": [0],
     "no-multi-spaces": [0],
     "no-shadow": [0],
-    "no-unused-vars": [1],
   }
 }
