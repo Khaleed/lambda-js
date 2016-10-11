@@ -1,10 +1,8 @@
 "use strict";
 
 /*
-
- HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
-
- */
+ *HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
+**/
 
 const pets = [{name: "Tabby", species: "Cat"},
               {name:"Leo", species: "Cat"},
@@ -13,10 +11,8 @@ const pets = [{name: "Tabby", species: "Cat"},
               {name: "Tweety", species: "Bird"}];
 
 /* FILTER
-
  Task - Filter Birds and Cats from Pets
-
-*/
+**/
 
 // filter bird- 1st style
 const getBirds = pets.filter(pet => pet.species === "Bird");
@@ -33,9 +29,6 @@ pets.filter(isBird);
 // filter - 3rd style
 Array.prototype.filter.call(pets, pet => pet.species === "Bird");
 
-// we ignore the 3rd stlye because it is somewhat ugly,
-// there are functional APIs like lodash and ramda
-
 // imperative style
 let birds = [];
 for (let i = 0; i < pets.length; i += 1) {
@@ -46,13 +39,12 @@ for (let i = 0; i < pets.length; i += 1) {
 // console.log(birds);
 
 /* MAP
+ * Task - Grab the name of pets
+ * Use Map and show the non-functional style too
+**/
 
- Task - Grab the name of pets
- Use Map and show the non-functional style too
-
-*/
-
-// Map - get name of pets
+/* Map - get name of pets
+**/
 const getPetNames = pets.map(pet => pet.name);
 // console.log(getPetNames);
 
