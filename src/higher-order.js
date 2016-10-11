@@ -187,7 +187,6 @@ sumNums(1, 2);
 /* Reduce Example 7 - Map written as a Reduce
  *
  **/
-
 const anotherNumList = [11, 12, 13, 14, 15];
 const doubleList = anotherNumList.map(n => n * 2);
 // ;=> [22, 24, 26, 28, 30]
@@ -204,7 +203,6 @@ const newArray = anotherNumList.reduce((newArray, num) => {
 const yetAnotherList = [20, 21, 22, 23, 24, 25, 26, 27];
 const findOddNums = yetAnotherList.filter((num) => num % 2 !== 0);
 // console.log(findOddNums);
-
 const reduceToOddNums = yetAnotherList.reduce((newArr, num) => {
     if (num % 2 !== 0) {
         newArr.push(num);
