@@ -43,51 +43,53 @@ for (let i = 0; i < pets.length; i += 1) {
 **/
 
 /* Map - get name of pets
-**/
+ **/
 const getPetNames = pets.map(pet => pet.name);
-// console.log(getPetNames);
 
-// Non functional
-let petNames = [];
+// Non functional example of filter
+const petNames = [];
 for (let i = 0; i < pets.length; i += 1) {
     petNames.push(pets[i].name);
 }
-// console.log(petNames);
 
 // Map Chaining/Composition
 const list = [1, 2, 3, 4, 5];
 const newList = list.map(n => n * n)
                     .map(n => n + n);
-// console.log(newList);
 
-// Map and Filter Example 1 - Double each number and filter nos that are divisible by two
+/* Map and Filter Example 1 - Double each number and filter nos that are divisible by two
+ **/
 const nos = [1, 2, 3, 4, 5];
 const newNos = nos.map(n => n * 2)
                   .filter(n => n % 2 === 0);
-// console.log(newNos);
 
-// Filter and Map Example 2 - double only the even numbers
+/* Filter and Map Example 2 - Double only the even numbers
+ **/
 const nosList = [1, 2, 4, 5, 6, 7, 8, 9, 10];
 const newNumList = nosList.filter(n => n % 2 === 0)
                           .map(n => n * 2);
-// console.log(newNumList);
 
-// Non-functional way of doing the above is as follows:-
+// Non-functional alternative to Example 2
 const newList2 = [];
 for (let i = 0; i < nosList.length; i += 1) {
-    // if it is an even number
     if (nosList[i] % 2 === 0) {
-        // double that number and push it to new list
         newList2.push(nosList[i] * 2);
     }
 }
-// console.log(newList2);
+
+/* Combine Map, Filter, and Reduce - Example 1
+**/
+const myList = [2, 4, 5, 6, 8, 10];
+const myNewList = myList.map(n => n * 3) // [6, 12, 15, 18, 24, 30]
+                        .map(n => n - 1) // [5, 11, 14, 17, 23, 29]
+                        .filter(n => n % 2 !== 0) // [5, 11, 17, 23, 29]
+                        .reduce((sum, n) => sum + n, 0); // 85
 
 /* REDUCE
-
+ *
  Task - Reduce to just one value
-
- */
+ *
+ **/
 
 const totalCost = [{value: 100},
                    {value:200},
