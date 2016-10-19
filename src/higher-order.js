@@ -1,8 +1,8 @@
 "use strict";
 
 /*
- *HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
-**/
+ * HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
+ **/
 
 const pets = [{name: "Tabby", species: "Cat"},
               {name:"Leo", species: "Cat"},
@@ -11,32 +11,31 @@ const pets = [{name: "Tabby", species: "Cat"},
               {name: "Tweety", species: "Bird"}];
 
 /* FILTER
- Task - Filter Birds and Cats from Pets
-**/
+ * Task - Filter Birds and Cats from Pets
+ **/
 
-// filter bird- 1st style
+// Filter bird- 1st style
 const getBirds = pets.filter(pet => pet.species === "Bird");
 // console.log(getBirds);
 
-// filter cat - 1st style
+// Filter cat - 1st style
 const getCats = pets.filter(pet => pet.species === "Cat");
 // console.log(getCats);
 
-// filter - 2nd style
+// Filter - 2nd style
 const isBird = pet => pet.species === "Bird";
 pets.filter(isBird);
 
-// filter - 3rd style
+// Filter - 3rd style
 Array.prototype.filter.call(pets, pet => pet.species === "Bird");
 
-// imperative style
+// Imperative style
 let birds = [];
 for (let i = 0; i < pets.length; i += 1) {
     if (pets[i].species === "Bird") {
         birds.push(pets[i]);
     }
 }
-// console.log(birds);
 
 /* MAP
  * Task - Grab the name of pets
@@ -96,43 +95,40 @@ const totalCost = [{value: 100},
                    {value:400},
                    {value: 500}];
 
-// Reduce Example 1
+/* Reduce Example 1
+ **/
 const getTotalCost = totalCost.reduce((total, cost) => total + cost.value, 0);
-// console.log(getTotalCost);
 
 // Imperative alternative to Example 1
 let counter = 0;
 for (let i = 0; i < totalCost.length; i += 1) {
     counter += totalCost[i].value;
 }
-// console.log(counter);
 
-// Reduce Example 2 on Array
+/* Reduce Example 2
+ **/
 const arr = [100, 200, 300, 400, 500];
 const newArr = arr.reduce((p, c) => p + c);
-// console.log(newArr);
 
 // Imperative version of Example 2
 let sum = 0;
 for (let i = 0; i < arr.length; i += 1) {
     sum += arr[i];
 }
-// console.log(sum);
 
-// Reduce Example 3 - double each number and then add the nos together to produce a single value
+/* Reduce Example 3 - Double each number and then add the nos together to produce a single value
+ **/
 const someNos = [5, 7, 8, 9 ,10];
 const newSomeNos = someNos.map(n => n * 2)
                           .reduce((totalNo, n) => totalNo + n, 0);
-// console.log(newSomeNos);
 
 // Imperative version of Example 3
 let total = 0;
 for (let i = 0; i < someNos.length; i += 1) {
     total += someNos[i] * 2;
 }
-// console.log(total);
 
-/* Reduce Example 4 -  reduce to an array that has nos divisible by 2
+/* Reduce Example 4 - Reduce to an array that has nos divisible by 2
 **/
 const otherNos = [10, 11, 12, 13, 14, 15, 16, 18, 20];
 const even = otherNos.reduce( (arrayWithEvenNos, n) => {
@@ -141,35 +137,31 @@ const even = otherNos.reduce( (arrayWithEvenNos, n) => {
     }
     return arrayWithEvenNos;
 },[]);
-// console.log(even);
 
-// imperative style
+// Imperative style
 let arrayWithEvenNos = [];
 for (let i = 0; i < otherNos.length; i += 1) {
     if (otherNos[i] % 2 === 0) {
         arrayWithEvenNos.push(otherNos[i]);
     }
 }
-// console.log(arrayWithEvenNos);
 
-// Reduce Example 5 - flatten a multi-dimensional array
+/* Reduce Example 5 - Flatten a multi-dimensional array
+ **/
 const nestedArr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]];
-const singleArr = nestedArr.reduce((singleArray, arr) => singleArray.concat(arr), []);
-//console.log(singleArr);
+const singleArr = nestedArr.reduce((singleArr, arr) => singleArr.concat(arr), []);
 
-// imperative example
+// Imperative example
 let finalArr = [];
 for (let i = 0; i < nestedArr.length; i += 1) {
     finalArr = finalArr.concat(nestedArr[i]);
 }
-// console.log(finalArr);
 
 /* Reduce Example 6 - The value of reduce as a swiss army knife
  **/
 const sumAnyNums = (...args) => args.reduce((sum, arg) => sum + arg, 0);
-// console.log(sumAnyNums(1,2,3,4,5));
 
-// imperative style
+// Imperative style
 let totalSum = 0;
 const sumNums = (...args) => {
     if (args.length === 0) {
@@ -182,10 +174,8 @@ const sumNums = (...args) => {
     return totalSum;
 };
 sumNums(1, 2);
-// console.log(totalSum);
 
 /* Reduce Example 7 - Map written as a Reduce
- *
  **/
 const anotherNumList = [11, 12, 13, 14, 15];
 const doubleList = anotherNumList.map(n => n * 2);
