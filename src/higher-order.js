@@ -46,14 +46,14 @@ for (let i = 0; i < pets.length; i += 1) {
  **/
 const getPetNames = pets.map(pet => pet.name);
 
-// Non functional example of filter
+// Non functional example of map
 const petNames = [];
 for (let i = 0; i < pets.length; i += 1) {
     petNames.push(pets[i].name);
 }
 
 // Map Chaining/Composition
-const list = [1, 2, 3, 4, 5];
+const list = [1, 2, 3, 4, 5]; // [1, 4, 9, 16, 25] -> [2, 8, 18, 32, 50]
 const newList = list.map(n => n * n)
                     .map(n => n + n);
 
