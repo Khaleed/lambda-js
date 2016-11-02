@@ -4,53 +4,61 @@
  * HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
  **/
 
-const pets = [{name: "Tabby", species: "Cat"},
-              {name:"Leo", species: "Cat"},
-              {name:"Diesel", species: "Dog"},
-              {name: "Duffy", species: "Bird"},
-              {name: "Tweety", species: "Bird"}];
+const fruits = [{name:"Golden Delicious", type:"Apple"},
+                {name:"Tangerine", type:"Orange"},
+                {name:"Gala", type:"Apple"},
+                {name:"Mandarin", type:"Orange"},
+                {name:"Cavendish", type:"Banana"},
+                {name:"Clementine", type:"Orange"}
+               ];
 
 /* FILTER
- * Task - Filter Birds and Cats from Pets
+ * Task - Filter Oranges from Fruits
  **/
 
-// Filter bird- 1st style
-const getBirds = pets.filter(pet => pet.species === "Bird");
-// console.log(getBirds);
+// Filter Orange - 1st style
+const getOranges = fruits.filter(fruit => fruit.type === "Orange");
 
-// Filter cat - 1st style
-const getCats = pets.filter(pet => pet.species === "Cat");
-// console.log(getCats);
+// console.log(getOranges);
 
-// Filter - 2nd style
-const isBird = pet => pet.species === "Bird";
-pets.filter(isBird);
+// Filter Orange - 2nd style
+const isOrange = fruit => fruit.type === "Orange";
+const filteredOranges = fruits.filter(isOrange);
 
-// Filter - 3rd style
-Array.prototype.filter.call(pets, pet => pet.species === "Bird");
+// console.log(filteredOranges);
+
+// Filter Orange - 3rd style
+Array.prototype.filter.call(fruits, fruit => fruit.type === "Orange");
 
 // Imperative style
-let birds = [];
-for (let i = 0; i < pets.length; i += 1) {
-    if (pets[i].species === "Bird") {
-        birds.push(pets[i]);
+const oranges = [];
+for (let i = 0; i < fruits.length; i += 1) {
+    if (fruits[i].type === "Orange") {
+        oranges.push(fruits[i]);
     }
 }
+// console.log(oranges);
+
 
 /* MAP
- * Task - Grab the name of pets
+ * Task - Grab the name of fruits
  * Use Map and show the non-functional style too
 **/
 
 /* Map - get name of pets
  **/
-const getPetNames = pets.map(pet => pet.name);
+
+const getFruitNames = fruits.map(fruit => fruit.name);
+
+// console.log(getFruitNames);
 
 // Non functional example of map
-const petNames = [];
-for (let i = 0; i < pets.length; i += 1) {
-    petNames.push(pets[i].name);
+const fruitNames = [];
+for (let i = 0; i < fruits.length; i += 1) {
+    fruitNames.push(fruits[i].name);
 }
+
+// console.log(fruitNames);
 
 // Map Chaining/Composition
 const list = [1, 2, 3, 4, 5]; // [1, 4, 9, 16, 25] -> [2, 8, 18, 32, 50]
