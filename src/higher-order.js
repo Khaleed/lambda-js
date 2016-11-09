@@ -9,8 +9,7 @@ const fruits = [{name:"Golden Delicious", type:"Apple"},
                 {name:"Gala", type:"Apple"},
                 {name:"Mandarin", type:"Orange"},
                 {name:"Cavendish", type:"Banana"},
-                {name:"Clementine", type:"Orange"}
-               ];
+                {name:"Clementine", type:"Orange"}];
 
 /* FILTER
  * Task - Filter Oranges from Fruits
