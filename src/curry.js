@@ -46,14 +46,13 @@ sumSixNos(1)(2)(3)(4)(5)(6); // ;=> 21
 
 // Curry Example 4 - Implementing Curry from Scratch
 const curry = fx => {
-    let arity = fx.length;
-    return function f1 () {
-        let args = Array.prototype.slice.call(arguments, 0);
+    const arity = fx.length;
+    return function f1 (...args) {
         if (args.length >= arity) {
             return fx.apply(null, args);
         } else {
             return function f2() {
-                let newArgs = Array.prototype.slice.call(arguments, 0);
+                const newArgs = Array.prototype.slice.call(args, 0);
                 return f1.apply(null, args.concat(newArgs));
             };
         }
