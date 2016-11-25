@@ -1,5 +1,5 @@
 {
-  "name": "lambda-js",
+  "name": "lambdaJS",
   "version": "1.0.0",
   "description": "Functional JavaScript",
   "main": "higher-order.js",
@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Khaleed/lambdaJS#readme",
   "dependencies": {
     "eslint": "^2.13.1",
+    "immutable": "^3.8.1",
+    "ramda": "^0.22.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
