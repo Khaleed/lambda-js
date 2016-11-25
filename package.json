@@ -4,7 +4,7 @@
   "description": "Functional JavaScript",
   "main": "higher-order.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/Khaleed/lambdaJS#readme",
   "dependencies": {
+    "babel-jest": "^17.0.2",
     "eslint": "^2.13.1",
+    "eslint-plugin-fp": "^2.2.0",
     "immutable": "^3.8.1",
+    "jest": "^17.0.3",
+    "jest-cli": "^17.0.3",
     "ramda": "^0.22.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
