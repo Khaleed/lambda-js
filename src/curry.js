@@ -44,18 +44,14 @@ const sumSixNos =
           n6 => n1 + n2 + n3 + n4 + n5 + n6;
 sumSixNos(1)(2)(3)(4)(5)(6); // ;=> 21
 
-// Curry Example 4 - Implementing Curry from Scratch
-const curry = fx => {
-    const arity = fx.length;
-    return function f1 (...args) {
-        if (args.length >= arity) {
-            return fx.apply(null, args);
-        } else {
-            return function f2() {
-                const newArgs = Array.prototype.slice.call(args, 0);
-                return f1.apply(null, args.concat(newArgs));
-            };
-        }
-    };
-};
-// Apply curry to multiple args
+
+// Curry Example 4 - Using Ramda
+const _ = require("ramda");
+
+const curry = _.curry;
+const addThreeNums = (a, b, c) => a + b + c;
+const curriedAddThreeNums = curry(addThreeNums);
+const f = curriedAddThreeNums(1, 2);
+const g = f(3);
+
+console.log(g);
