@@ -1,7 +1,5 @@
-/* Currying refers to when a function with multiple arguments is transformed into
- a series of functions with single arguments
+/* Currying refers to when a function with multiple arguments is transformed into a series of functions with single arguments
 */
-
 // Say we have a function that takes multiple arguments
 const getLionKingInfo = (name, size, prey) => "Name is " + name + ", size is " + size + " and prey is " + prey;
 getLionKingInfo();
@@ -26,7 +24,7 @@ const add = (a, b) => {
         return c => a + c;
     } else {
         // if two args are passed
-        return a +b;
+        return a + b;
     }
 };
 
@@ -48,10 +46,18 @@ sumSixNos(1)(2)(3)(4)(5)(6); // ;=> 21
 // Curry Example 4 - Using Ramda
 const _ = require("ramda");
 
-const curry = _.curry;
 const addThreeNums = (a, b, c) => a + b + c;
-const curriedAddThreeNums = curry(addThreeNums);
+const curriedAddThreeNums = _.curry(addThreeNums);
 const f = curriedAddThreeNums(1, 2);
 const g = f(3);
-
 console.log(g);
+
+// Curry Example 5 - Implementation
+const curry = fn => {
+    const curried = (f, init) =>
+              (...args) => {
+                  const acc = [...init, ...args];
+                  return acc.length >= f.length ? f(...acc) : curried(f, acc);
+              };
+    return curried(fn, []);
+};
