@@ -2,37 +2,18 @@
 */
 // Say we have a function that takes multiple arguments
 const getLionKingInfo = (name, size, prey) => "Name is " + name + ", size is " + size + " and prey is " + prey;
-getLionKingInfo();
+getLionKingInfo("Simba", "190-kilos", "Gazelle");
 
 // Curried example 1
 const curryLionKingInfo =
           name =>
-          size =>
-          prey => "The name of the lion who became King is " + name + ", the size is " + size + " and their favourite prey is " + prey;
+              size =>
+                  prey => "The lion who became King is " + name + ", the size is " + size + " and their favourite prey is " + prey;
 
-curryLionKingInfo("Simba")("125-kilos")("Gazelle");
+curryLionKingInfo("Simba")("190-kilos")("Gazelle");
 
-// Curried Example 2
-const add = (a, b) => {
-    // if no args are passed
-    if (arguments.length < 1) {
-        // just return add
-        return add();
-        // if one arg is passed return a new function that takes c
-        // and that returns c + a
-    } else if (arguments.length < 2) {
-        return c => a + c;
-    } else {
-        // if two args are passed
-        return a + b;
-    }
-};
 
-add();
-add(1, (4));
-add(1, 2);
-
-// Curried Example 3 - As the number of args grow, things get out of control
+// Curried Example 2 - As the number of args grow, things get out of control
 const sumSixNos =
           n1 =>
           n2 =>
@@ -42,7 +23,6 @@ const sumSixNos =
           n6 => n1 + n2 + n3 + n4 + n5 + n6;
 sumSixNos(1)(2)(3)(4)(5)(6); // ;=> 21
 
-
 // Curry Example 4 - Using Ramda
 const _ = require("ramda");
 
@@ -50,14 +30,36 @@ const addThreeNums = (a, b, c) => a + b + c;
 const curriedAddThreeNums = _.curry(addThreeNums);
 const f = curriedAddThreeNums(1, 2);
 const g = f(3);
-console.log(g);
+// console.log(g);
 
-// Curry Example 5 - Implementation
+// Curry Example 3 - Implementation
 const curry = fn => {
+    const arity = fn.length;
     const curried = (f, init) =>
               (...args) => {
+                  // concat initial and current args
                   const acc = [...init, ...args];
-                  return acc.length >= f.length ? f(...acc) : curried(f, acc);
+                  return acc.length >= arity ? f(...acc) : curried(f, acc);
               };
     return curried(fn, []);
 };
+
+const addTwoNums = (a, b) => a + b;
+
+const curriedAddTwoNums = curry(addTwoNums);
+
+const fn = curriedAddTwoNums(1);
+
+console.log(fn); //=> [Function]
+
+const gx = fn(2);
+
+console.log(gx); //=> 3
+
+// Partial Example 1
+const partial = (f, ...args) => {
+    return f.bind(null, ...args);
+};
+
+// Partial Example 2
+const partialWithoutBind = (f, ...init) => (...args) => f(...init, ...args);
