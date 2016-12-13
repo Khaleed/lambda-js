@@ -12,7 +12,18 @@ const factorial_inner = (n, acc) => {
     }
 };
 
-console.log(factorial_inner(2, 1));
-console.log(factorial_inner(3, 1));
-console.log(factorial_inner(4, 1));
-console.log(factorial_inner(5, 1));
+// console.log(factorial_inner(2, 1));
+// console.log(factorial_inner(3, 1));
+// console.log(factorial_inner(4, 1));
+// console.log(factorial_inner(5, 1));
+
+// simple recursion - countdown from 100 to 1
+const countDown = x => {
+    if (x === 0) {
+        return;
+    }
+    console.log(x);
+    countDown(x - 1);
+};
+
+countDown(100);
