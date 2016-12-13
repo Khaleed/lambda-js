@@ -1,7 +1,7 @@
 "use strict";
 
 // to understand closures you must first understand scoping and hoisting
-const name = "Michael Jordan";
+let name = "Michael Jordan";
 function showCelebrity() {
     console.log(name); // "Michael Jordan"
 }
