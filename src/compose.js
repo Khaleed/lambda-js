@@ -19,10 +19,17 @@ const socialRule = compose(exclaim, toUpperCase);
 
 const printSocialRule = socialRule("No feigning surprise");
 
-console.log(printSocialRule);
+// console.log(printSocialRule);
 
 const socialRuleWithoutCompose = x => exclaim(toUpperCase(x));
 
 const printSocialRuleWithoutCompose = socialRuleWithoutCompose("No well-actually's");
 
 console.log(printSocialRuleWithoutCompose);
+
+// // Example where order matters
+// const head = x => x[0];
+
+// const reduce = curry((f, ary) => ary.reduce(f));
+
+// const reverse = reduce((acc, x) => [x].concat(acc), []);
