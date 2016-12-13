@@ -12,39 +12,43 @@ function showOrdinaryPersonName() {
 }
 
 showCelebrity(); // "Michael Jackson"
-showOrdinaryPersonName(); // "Hassan Mannah"
+showOrdinaryPersonName(); // "Joe Bloggs"
 
 // basic func to show full name
-const showFullName = (first, middle, last) => "your name is " + first + " " + middle + " " + last;
+const showFullName = (f, m, l) => `My name is ${f} ${m} ${l}`;
 
-// partially applied function
-const withFirstAndLastPartial = (first, last) => {
-    return middle => showFullName(first, middle, last);
-};
+console.log(showFullName("Joe", "M", "Bloggs"));
+
+const withFirstAndLastPartial = (f, l) => (m) => showFullName(f, m, l);
+
+console.log(withFirstAndLastPartial("Andy", "Liang")); //=> [Function]
 
 const withMiddleName = withFirstAndLastPartial("Andy", "Liang");
-withMiddleName("D"); // Andy D Liang
+
+withMiddleName("D");
 
 // closure is an inner function that has access to the outer functions' variables and parametres
 const showName = (first, last) => {
-    function makeFullName(middle) {
-        return "Your name is " + first + " " + middle + " " + last;
-    }
+    const makeFullName = (middle) => {
+        return `Your name is ${first} ${middle} ${last}`;
+    };
     return makeFullName;
 };
 
-const joeBlogsWithMiddleName = showName("Joe", "Bloggs");
+const joeBloggsWithMiddleName = showName("Joe", "Bloggs");
 
-joeBlogsWithMiddleName("M"); // Joe M Blogs
+console.log(joeBloggsWithMiddleName("M"));//=> Joe M Bloggs
 
 // closures have access to outer function's variables even after the outer function has returned
-const greeting = say => {
-    function greetFriend(name) {
-        return say + " " + name;
-    }
+const greeting = (say) => {
+    const greetFriend = (name) => {
+        return `${say} ${name}`;
+    };
     return greetFriend;
 };
 
 const greetArecurser = greeting("Never graduate"); // greeting has now returned
 // the closure is called and it has access to the greeting function's paremeters/variables
-greetArecurser("Ginger"); // "Never graduate Ginger"
+const greetGinger = greetArecurser("Ginger");//=> "Never graduate Ginger"
+
+console.log(greetGinger);//=> "Never Graduate Ginger";
