@@ -3,16 +3,16 @@
 // to understand closures you must first understand scoping and hoisting
 let name = "Michael Jordan";
 function showCelebrity() {
-    console.log(name); // "Michael Jordan"
+    console.log(name); //=> "Michael Jordan"
 }
 
 function showOrdinaryPersonName() {
     name = "Joe Bloggs";
-    console.log(name); // "Joe Bloggs"
+    console.log(name); //=> "Joe Bloggs"
 }
 
-showCelebrity(); // "Michael Jackson"
-showOrdinaryPersonName(); // "Joe Bloggs"
+showCelebrity(); //=> "Michael Jordan"
+showOrdinaryPersonName(); //=> "Joe Bloggs"
 
 // basic func to show full name
 const showFullName = (f, m, l) => `My name is ${f} ${m} ${l}`;
