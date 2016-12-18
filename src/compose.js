@@ -1,15 +1,19 @@
 "use strict";
 
+const R = require("ramda");
+
+const reduce = R.reduce;
+
+const curry = (f, ...init) => (...args) => f.apply(null, [...init, ...args]);
+
 // compose :: (y -> z, ..., a -> b) -> (a -> z)
 const compose = (...fs) => fs.reduce((f, g) => (...args) => f(g(...args)));
-
-const curry = (fn, ...init) => (...args) => fn.apply(null, init.concat(args));
 
 const avg = (...args) => args.reduce((acc, x) => acc + x, 0) / args.length;
 
 const doAvg = curry(avg, 1, 2, 3);
 
-console.log(doAvg(2));
+// console.log(doAvg(2));
 
 const toUpperCase = x => x.toUpperCase();
 
@@ -19,17 +23,21 @@ const socialRule = compose(exclaim, toUpperCase);
 
 const printSocialRule = socialRule("No feigning surprise");
 
-// console.log(printSocialRule);
+// console.log(printSocialRule);//=> "NO FEIGNING SURPRISE!"
 
 const socialRuleWithoutCompose = x => exclaim(toUpperCase(x));
 
 const printSocialRuleWithoutCompose = socialRuleWithoutCompose("No well-actually's");
 
-console.log(printSocialRuleWithoutCompose);
+// console.log(printSocialRuleWithoutCompose);//=> "NO WELL-ACTUALLY'S!"
 
 // // Example where order matters
-// const head = x => x[0];
+const head = x => x[0]; // grab first element in array
 
-// const reduce = curry((f, ary) => ary.reduce(f));
+const reverse = reduce((acc, x) => [x].concat(acc), []);
 
-// const reverse = reduce((acc, x) => [x].concat(acc), []);
+const last = compose(head, reverse);
+
+const printLast = last(["Jumpkick", "Roundhouse", "Uppercut"]);
+
+console.log(printLast); //=> "Uppercut";
