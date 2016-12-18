@@ -34,10 +34,26 @@ const printSocialRuleWithoutCompose = socialRuleWithoutCompose("No well-actually
 // // Example where order matters
 const head = x => x[0]; // grab first element in array
 
-const reverse = reduce((acc, x) => [x].concat(acc), []);
+const reverse = reduce((acc, x) => [x].concat(acc), []); //
 
 const last = compose(head, reverse);
 
-const printLast = last(["Jumpkick", "Roundhouse", "Uppercut"]);
+const args = ["Jumpkick", "Roundhouse", "Uppercut"];
 
-console.log(printLast); //=> "Uppercut";
+const printLast = last(args);
+
+// console.log(printLast); //=> "Uppercut";
+
+// Associative Law applies to Compose
+const lastUpper = compose(toUpperCase, head, reverse);
+
+const printLastUpper = lastUpper(args);//=> "UPPERCUT"
+
+// console.log(printLastUpper);
+
+const loudLastUpper = compose(exclaim, toUpperCase, head, reverse);
+
+const printLoudLastUpper = loudLastUpper(args);
+
+// console.log(printLoudLastUpper);
+
