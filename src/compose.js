@@ -4,6 +4,12 @@ const R = require("ramda");
 
 const reduce = R.reduce;
 
+const map = R.map;
+
+const split = R.split;
+
+const join = R.join;
+
 const curry = (f, ...init) => (...args) => f.apply(null, [...init, ...args]);
 
 // compose :: (y -> z, ..., a -> b) -> (a -> z)
@@ -56,4 +62,30 @@ const loudLastUpper = compose(exclaim, toUpperCase, head, reverse);
 const printLoudLastUpper = loudLastUpper(args);
 
 // console.log(printLoudLastUpper);
+/*
+ * Point Free - It can be a double-edge sword
+ **/
 
+const initials = name => name.split(" ").map(compose(toUpperCase, head)).join(". ");
+
+// console.log(initials("Sugar Ray Robinson"));
+
+const freeInitials = compose(join(". "), map(compose(toUpperCase, head)), split(" "));
+
+const printFreeInitials = freeInitials("Sugar Ray Robinson");
+
+// console.log(printFreeInitials);//=> S. R. R
+
+/*
+ * Debugging Compose
+ **/
+
+// const latin = compose(map, angry, reverse);
+
+// latin(["frog", "eyes"]); //=> error
+
+// // const rightLatin = compose(map(angry), reverse);
+
+// // const printRightLatin = rightLatin(["frog", "eyes"]);
+
+// // console.log(rightLatin); //=> ["FROG!", "EYES!"]
