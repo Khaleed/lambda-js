@@ -10,7 +10,13 @@ const split = R.split;
 
 const join = R.join;
 
-const curry = (f, ...init) => (...args) => f.apply(null, [...init, ...args]);
+const curry = R.curry;
+
+const replace = R.replace;
+
+const toLower = R.toLower;
+
+// const curry = (f, ...init) => (...args) => f.apply(null, [...init, ...args]);
 
 // compose :: (y -> z, ..., a -> b) -> (a -> z)
 const compose = (...fs) => fs.reduce((f, g) => (...args) => f(g(...args)));
@@ -44,29 +50,34 @@ const reverse = reduce((acc, x) => [x].concat(acc), []); //
 
 const last = compose(head, reverse);
 
+const angry = compose(exclaim, toUpperCase);
+
 const args = ["Jumpkick", "Roundhouse", "Uppercut"];
 
 const printLast = last(args);
 
-// console.log(printLast); //=> "Uppercut";
+// console.log(printLast);//=> "Uppercut";
 
 // Associative Law applies to Compose
 const lastUpper = compose(toUpperCase, head, reverse);
 
-const printLastUpper = lastUpper(args);//=> "UPPERCUT"
+const printLastUpper = lastUpper(args);
 
-// console.log(printLastUpper);
+// console.log(printLastUpper);//=> "UPPERCUT"
 
-const loudLastUpper = compose(exclaim, toUpperCase, head, reverse);
+const loudLastUpper = compose(angry, last);
 
 const printLoudLastUpper = loudLastUpper(args);
 
-// console.log(printLoudLastUpper);
+// console.log(printLoudLastUpper); //=> "UPPERCUT!"
+
 /*
- * Point Free - It can be a double-edge sword
+ * Point Free - It can be a double-edged sword
  **/
 
-const initials = name => name.split(" ").map(compose(toUpperCase, head)).join(". ");
+const initials = name => name.split(" ")
+                             .map(compose(toUpperCase, head))
+                             .join(". ");
 
 // console.log(initials("Sugar Ray Robinson"));
 
@@ -80,12 +91,23 @@ const printFreeInitials = freeInitials("Sugar Ray Robinson");
  * Debugging Compose
  **/
 
-// const latin = compose(map, angry, reverse);
+const latin = compose(map, angry, reverse);
 
-// latin(["frog", "eyes"]); //=> error
+latin(["frog", "eyes"]); //=> error
 
-// // const rightLatin = compose(map(angry), reverse);
+const rightLatin = compose(map(angry), reverse);
 
-// // const printRightLatin = rightLatin(["frog", "eyes"]);
+const printRightLatin = rightLatin(["frog", "eyes"]);
 
-// // console.log(rightLatin); //=> ["FROG!", "EYES!"]
+// console.log(rightLatin); //=> ["FROG!", "EYES!"]
+
+const trace = curry((tag, x) => {
+    console.log(tag, x);
+    return x;
+});
+
+const dasherize = compose(join("-"), toLower, split(" "), replace(/\s{2,}/ig, " "));
+
+const callDasherize = dasherize("The world is a vampire");
+
+// console.log(callDasherize);
