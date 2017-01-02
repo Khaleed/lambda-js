@@ -79,13 +79,13 @@ const initials = name => name.split(" ")
                              .map(compose(toUpperCase, head))
                              .join(". ");
 
-// console.log(initials("Sugar Ray Robinson"));
+console.log(initials("Sugar Ray Robinson"));
 
 const freeInitials = compose(join(". "), map(compose(toUpperCase, head)), split(" "));
 
 const printFreeInitials = freeInitials("Sugar Ray Robinson");
 
-// console.log(printFreeInitials);//=> S. R. R
+console.log(printFreeInitials);//=> S. R. R
 
 /*
  * Debugging Compose
@@ -99,7 +99,7 @@ const rightLatin = compose(map(angry), reverse);
 
 const printRightLatin = rightLatin(["frog", "eyes"]);
 
-// console.log(rightLatin); //=> ["FROG!", "EYES!"]
+console.log(rightLatin); //=> ["FROG!", "EYES!"]
 
 const trace = curry((tag, x) => {
     console.log(tag, x);
@@ -110,4 +110,4 @@ const dasherize = compose(join("-"), toLower, split(" "), replace(/\s{2,}/ig, " 
 
 const callDasherize = dasherize("The world is a vampire");
 
-// console.log(callDasherize);
+console.log(callDasherize);
