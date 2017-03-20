@@ -3,3 +3,9 @@
  */
 
 const partial = (f, ...init) => (...rest) => f(...init, ...rest);
+
+const add = (a, b, c) => a + b + c;
+
+const addTwo = partial(add, a, b);
+
+console.log(addTwo(1, 2)); //=> 3
