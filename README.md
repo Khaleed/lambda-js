@@ -29,9 +29,9 @@ lambda-js is released under the The [MIT](https://opensource.org/licenses/MIT) L
 
 ## Resources
 
-- Professor Frisby's Mostly Adequate Guide to Functional Programming: https://github.com/MostlyAdequate/mostly-adequate-guide
-- An Introduction to functional programming: https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming
-- Clojure: https://clojure.org/
+- Professor Frisby's Mostly Adequate Guide to Functional Programming: http://github.com/MostlyAdequate/mostly-adequate-guide
+- An Introduction to functional programming: http://codewords.recurse.com/issues/one/an-introduction-to-functional-programming
+- Clojure: http://clojure.org/
 - Haskell Programming: From First Principles: http://haskellbook.com/
 
 <a href='http://www.recurse.com' title='Made with love at the Recurse Center'><img src='https://cloud.githubusercontent.com/assets/2883345/11325206/336ea5f4-9150-11e5-9e90-d86ad31993d8.png' height='20px'/></a>
