@@ -1,7 +1,7 @@
 /*
  Partial takes a function f and fewer args than normal arguments to f,
  and returns a new function that takes variable number of additional args.
- When called, the return function f with args and additional args.
+ When called, the return function calls f with args and additional args.
  */
 
 const partial = (f, ...init) => (...rest) => f(...init, ...rest);
