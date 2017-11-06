@@ -4,12 +4,12 @@
  * HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
  **/
 
-const fruits = [{name:"Golden Delicious", type:"Apple"},
-                {name:"Tangerine", type:"Orange"},
-                {name:"Gala", type:"Apple"},
-                {name:"Mandarin", type:"Orange"},
-                {name:"Cavendish", type:"Banana"},
-                {name:"Clementine", type:"Orange"}];
+const fruits = [{ name:"Golden Delicious", type:"Apple" },
+                { name:"Tangerine", type:"Orange" },
+                { name:"Gala", type:"Apple" },
+                { name:"Mandarin", type:"Orange" },
+                { name:"Cavendish", type:"Banana" },
+                { name:"Clementine", type:"Orange" }];
 
 /* FILTER
  * Task - Filter Oranges from Fruits
@@ -206,3 +206,6 @@ const reduceToOddNums = yetAnotherList.reduce((oddArr, n) => {
     }
     return oddArr;
 }, []);
+
+/* Reduce Example 9 -
+**/
