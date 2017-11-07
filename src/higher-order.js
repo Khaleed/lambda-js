@@ -42,7 +42,7 @@ for (let i = 0; i < fruits.length; i += 1) {
  * Use Map and show the non-functional style too
 **/
 
-/* Map - get name of pets
+/* Map - get name of fruits
  **/
 
 const getFruitNames = fruits.map(fruit => fruit.name);
@@ -96,11 +96,11 @@ const myNewList = myList.map(n => n * 3) // [6, 12, 15, 18, 24, 30]
  *
  **/
 
-const totalCost = [{value: 100},
-                   {value:200},
-                   {value: 300},
-                   {value:400},
-                   {value: 500}];
+const totalCost = [{ value: 100 },
+                   { value:200 },
+                   { value: 300 },
+                   { value:400 },
+                   { value: 500 } ];
 
 /* Reduce Example 1
  **/

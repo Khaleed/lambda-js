@@ -12,7 +12,7 @@ const addTwo = partial(add, 1, 2);
 
 const addThree = addTwo(3);
 
-console.log(addThree); //=> 6
+// console.log(addThree); //=> 6
 
 const multiply = (w, x, y, z) => w * x * y * z;
 
