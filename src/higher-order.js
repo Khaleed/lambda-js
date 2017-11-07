@@ -1,5 +1,3 @@
-"use strict";
-
 /*
  * HIGHER ORDER FUNCTIONS - MAP, REDUCE, FILTER
  **/

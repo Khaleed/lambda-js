@@ -1,5 +1,3 @@
-"use strict";
-
 // to understand closures you must first understand scoping and hoisting
 let name = "Michael Jordan";
 function showCelebrity() {
