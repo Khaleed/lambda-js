@@ -4,7 +4,7 @@
 ## Goal
 
 - Create annotated code and examples of how to write a more functional JavaScript in ES6.
-- Where possible, examples will be compared to non-functional programming code.
+- Where possible, examples will be compared to imperative style code.
 
 ## Instructions
 
