@@ -1,12 +1,7 @@
 // Example of Tail Call Optimisation
-const factorial = (n, acc = 1) => {
-    // base case
-    if (n < 2) {
-        return acc;
-    }
-    // recursive case
-    return factorial(n - 1, n * acc);
-};
+const factorial = (n, acc = 1) => (n < 2 ? acc : factorial(n - 1, n * acc));
+
+console.log(factorial(1000)); // Infinity
 
 // simple recursion - countdown from 100 to 1
 const countDown = x => {
